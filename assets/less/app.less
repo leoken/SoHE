@@ -3,30 +3,157 @@
  */
 
 @import "bootstrap/bootstrap.less";
-
+@import url(http://fonts.googleapis.com/css?family=Oswald);
 /* ==========================================================================
    Base
    ========================================================================== */
 
 body { }
 
-
-
 /* ==========================================================================
    Header
    ========================================================================== */
 
-.banner { }
+.banner {
+
+}
+
+.navbar-default {
+  background-color: #cf0440;
+}
+
+#menu-primary-navigation li a {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 26px;
+  line-height: 12px;
+  .sub {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    text-transform: capitalize!important;
+    padding-top: -10px;
+  }
+}
 
 
+.btn {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+}
 /* ==========================================================================
    Content
    ========================================================================== */
 
 .content { }
 
+.brand {
+  background-image: url(/wp-content/uploads/logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 352px;
+  height: 99px;
+  text-indent: -9999px;
+  display: block;
+  margin-bottom: -55px;
+  z-index: 2000;
+  position: relative;
+}
 
+.nav-mini {
+  width: 50%;
+  float: right;
+  margin-top: -20px;
+  li a {
+    color: #666;
+  }
+}
+
+.marketing {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  h2 {
+    color: #cf0440;
+    font-size: 21px;
+  }
+  .excerpt {
+    line-height: 24px;
+  }
+  
+  .linked {
+      display: block;
+    &:hover {
+      background-color: #cf0440;
+    }
+  }
+  
+}
+
+.social {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  h2 {
+    color: #cf0440;
+  }
+  
+  .twitter {
+    background-color: #5daade;
+    display: block;
+    height: 264px;
+  }
+  
+  .facebook {
+    background-color: #3b5999;
+    display: block;
+    height: 264px;
+  }
+}
+
+.container-fluid {
+  .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .letter {
+    position: absolute;
+    margin: auto;
+  }
+  
+  .call-to-action {
+    height: 264px;
+    text-align: center;
+    background-color: #cf0440;
+    h2 {
+      margin: 60px 0 30px 0;
+      color: #fff;
+    }
+    a {
+      color: #cf0440;
+      background-color: #fff;
+      text-transform:none;
+    }
+  }
+}
+
+.navbar-nav>li>a {
+padding-top: 32px;
+padding-bottom: 28px;
+}
+
+.navbar {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.nav-mini>li>a {
+
+}
 
 /* ==========================================================================
    Primary Content
@@ -37,7 +164,14 @@ body { }
 /* Gallery Shortcode */
 .gallery-row { padding: 15px 0; }
 
+.wrap {
+  margin-top: 60px;
+}
 
+.wrapper {
+  text-align: center;
+  margin: 0 auto;
+}
 
 /* ==========================================================================
    Sidebar
@@ -63,9 +197,25 @@ body { }
    Footer
    ========================================================================== */
 
-.content-info { }
-
-
+.content-info {
+  background-color: #efeff3;
+  padding-bottom: 100px;
+  .brand {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  h3 {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #cf0440;
+  }
+  
+  .text-6 {
+    h3 {
+      color: #000;
+    }
+  }
+}
 
 /* ==========================================================================
    WordPress Generated Classes
@@ -77,13 +227,43 @@ body { }
 .alignright { float: right; }
 figure.alignnone { margin-left: 0; margin-right: 0; }
 
+.navbar-default .navbar-toggle .icon-bar {
+background-color: #fff;
+}
 
+.navbar-default .navbar-toggle {
+border-color: transparent; 
+}
+
+.navbar-toggle .icon-bar {
+width: 32px;
+height: 3px;
+border-radius: 1px;
+}
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media (min-width: @screen-sm-min) { }
+@media (max-width: @screen-sm-max) {
+    .brand {
+    background-image: url(/wp-content/uploads/logo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 352px;
+    height: 99px;
+    text-indent: -9999px;
+    display: block;
+    margin-bottom: -55px;
+    z-index: 2000;
+    position: relative;
+  }
+  .nav-mini {
+width: 100%;
+float: left;
+margin-top: 0;
+}
+}
 
 @media (min-width: @screen-md-min) { }
 

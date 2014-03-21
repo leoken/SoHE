@@ -17,6 +17,12 @@
     }
   ?>
 
+  <?php
+    if (is_page_template('template-home.php')) {
+      get_template_part('templates/content', 'jumbotron');
+    }
+  ?>
+
   <div class="wrap container" role="document">
     <div class="content row">
       <main class="main <?php echo roots_main_class(); ?>" role="main">
