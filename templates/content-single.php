@@ -8,7 +8,12 @@
       <?php the_content(); ?>
     </div>
     <footer>
-      <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
+        <nav class="post-nav">
+          <ul class="">
+            <li class="pull-left"><?php previous_post_link(); ?></li>
+            <li class="pull-right"><?php next_post_link(); ?></li>
+          </ul>
+        </nav>
     </footer>
     <?php comments_template('/templates/comments.php'); ?>
   </article>

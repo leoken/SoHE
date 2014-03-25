@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Carousel Template
+Template Name: Tabs Template
 */
 ?>
 

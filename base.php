@@ -18,7 +18,7 @@
   ?>
 
   <?php
-    if (is_page_template('template-home.php')) {
+    if (is_front_page()) {
       get_template_part('templates/content', 'jumbotron');
     }
   ?>
