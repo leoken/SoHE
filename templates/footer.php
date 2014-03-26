@@ -1,3 +1,4 @@
+<?php if (is_front_page()) { ?>
 <footer class="content-info" role="contentinfo">
   <div class="container">
     <div class="row">
@@ -8,5 +9,5 @@
     </div>
   </div>
 </footer>
-
+<?php } ?>
 <?php wp_footer(); ?>

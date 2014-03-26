@@ -23,6 +23,18 @@
     }
   ?>
 
+  <?php
+  if (is_page_template('template-calendar.php') || is_page_template('template-directory.php') || is_page_template('template-bran.php') || is_singular(array( 'event', 'staff' ))) {
+      get_template_part('templates/content', 'header-image');
+  }
+  ?>
+
+  <?php
+  if (is_page_template('template-meat.php')) {
+      get_template_part('templates/content', 'parallax');
+  }
+  ?>
+
   <div class="wrap container" role="document">
     <div class="content row">
       <main class="main <?php echo roots_main_class(); ?>" role="main">
@@ -36,6 +48,11 @@
     </div><!-- /.content -->
   </div><!-- /.wrap -->
 
+  <?php
+  if (is_page_template('template-meat.php')) {
+      get_template_part('templates/content', 'parallax-bottom');
+  }
+  ?>
   <?php get_template_part('templates/footer'); ?>
 
 </body>

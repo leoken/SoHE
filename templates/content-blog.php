@@ -14,7 +14,7 @@ endwhile;
 
 wp_reset_postdata();?>
 
-<div class="row">
+<div id="main-posts" class="row">
 <?php if(have_posts()) : while (have_posts()) : the_post();
 if ($post->ID == $do_not_duplicate) continue;
 ?>
