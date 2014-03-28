@@ -1,11 +1,9 @@
 <div class="row">
   <div class="<?php echo roots_sidebar_class(); ?>">
     <div class="list-group">
-      <?php
-        if (has_nav_menu('calendar_navigation')) :
-          wp_nav_menu(array('theme_location' => 'calendar_navigation', 'menu_class' => '', 'before' => '<span class="list-group-item">', 'after' => '</span>'));
-        endif;
-      ?>
+      <?php if( get_field( 'side_menu' ) ) : ?>
+          <?php the_field( 'side_menu' ); ?>
+      <?php endif; ?>
     </div>
   </div>
   <div class="col-sm-9">

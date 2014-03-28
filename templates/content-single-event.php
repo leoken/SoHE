@@ -8,7 +8,7 @@
   </div>
   <div class="col-sm-9">
 <?php $args = array (
-  'post_type'              => 'staff',
+  'post_type'              => 'event',
   'posts_per_page'         => '12',
   'orderby'                => 'menu_order',
 );
@@ -23,7 +23,7 @@ $query = new WP_Query( $args );
 
   <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 
-    <?php get_template_part('templates/content', 'staff'); ?>
+    <?php get_template_part('templates/content', 'event'); ?>
 
   <?php endwhile; ?>
 

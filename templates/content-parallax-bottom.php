@@ -17,7 +17,7 @@
           $width = $image['sizes'][ $size . '-width' ];
           $height = $image['sizes'][ $size . '-height' ]; ?>
 
-    <div id="footer-image" class="">
+    <div id="footer-image" class="" data-stellar-background-ratio="0.5">
       <div class="footer-inner">
           <style>
            #footer-image {

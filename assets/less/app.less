@@ -8,7 +8,9 @@
    Base
    ========================================================================== */
 
-body { }
+body {
+  
+}
 
 /* ==========================================================================
    Header
@@ -54,6 +56,17 @@ body.single {
    Content
    ========================================================================== */
 
+blockquote {
+  font-family: 'Oswald', sans-serif;
+  background-color: #80B653;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 42px;
+  border-left: 0;
+  font-weight: 700;
+  padding: 50px 20px;
+}
+
  #header-image {
    -moz-box-shadow:    inset 0 0 10px rgba(0,0,0,0.2);
    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
@@ -69,6 +82,7 @@ body.single {
 
 body.page-template-template-meat-php #header-image {
   height: 550px;
+  background-size: cover;
   h1 {
     position: absolute;
     bottom: 60px;
@@ -106,7 +120,7 @@ body.page-template-template-meat-php #footer-image {
 }
 
 .content {
-
+  margin-bottom: 50px;
 }
 
 .list-group {
@@ -123,9 +137,7 @@ body.page-template-template-meat-php #footer-image {
         color: @gray;
       }
     }
-
   }
-  
 }
 
 .brand {
@@ -238,6 +250,7 @@ body.page-template-template-meat-php #footer-image {
   background-color: transparent;
 }
 
+
 /* ==========================================================================
    Primary Content
    ========================================================================== */
@@ -268,6 +281,25 @@ body.page-template-template-meat-php #footer-image {
     padding: 0;
   }
 }
+
+.gallery-row {
+  padding: 5px 0!important;
+  .col-sm-2, .col-lg-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .thumbnail {
+    margin-bottom: 0;
+  }
+}
+
+article #thumbnail-wrap {
+  background-image: url(/wp-content/uploads/circle-highlight.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+
 #featured {
   padding-bottom: 30px;
 }
@@ -426,7 +458,7 @@ body.single h1.entry-title {
    ========================================================================== */
 
 .aligncenter { display: block; margin: 0 auto; }
-.alignleft { float: left; }
+.alignleft { float: left; padding-right: 30px; padding-bottom: 30px; }
 .alignright { float: right; }
 figure.alignnone { margin-left: 0; margin-right: 0; }
 

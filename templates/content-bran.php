@@ -13,3 +13,4 @@
     <?php endwhile; ?>
   </div>
 </div>
+<?php get_template_part('templates/content', 'subsection'); ?>

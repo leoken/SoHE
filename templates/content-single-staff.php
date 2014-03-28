@@ -27,4 +27,3 @@
     <?php comments_template('/templates/comments.php'); ?>
   </article>
 <?php endwhile; ?>
-<?php get_template_part('templates/content', 'related'); ?>
