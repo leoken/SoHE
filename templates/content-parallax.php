@@ -17,7 +17,7 @@
           $width = $image['sizes'][ $size . '-width' ];
           $height = $image['sizes'][ $size . '-height' ]; ?>
 
-    <div id="header-image" class="" data-stellar-background-ratio="0.5">
+    <div id="header-image" class="" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="0">
       <div class="header-inner">
           <style>
            #header-image {

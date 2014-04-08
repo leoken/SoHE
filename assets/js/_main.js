@@ -23,7 +23,13 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
-      $(window).stellar();
+
+      $.stellar({
+        horizontalOffset: 0,
+        verticalOffset: 0,
+        scrollProperty: 'scroll',
+        positionProperty: 'position'
+      });
     }
   },
   // Home page

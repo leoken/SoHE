@@ -92,6 +92,49 @@ function sohe_post_types() {
 	);
 	register_post_type( 'staff', $args );
 
+	$labels = array(
+		'name'                => _x( 'How-To', 'Post Type General Name', 'sohe' ),
+		'singular_name'       => _x( 'How-To', 'Post Type Singular Name', 'sohe' ),
+		'menu_name'           => __( 'How-To', 'sohe' ),
+		'parent_item_colon'   => __( 'Parent Item:', 'sohe' ),
+		'all_items'           => __( 'All How-Tos', 'sohe' ),
+		'view_item'           => __( 'View Item', 'sohe' ),
+		'add_new_item'        => __( 'Add New How-To', 'sohe' ),
+		'add_new'             => __( 'Add New', 'sohe' ),
+		'edit_item'           => __( 'Edit Item', 'sohe' ),
+		'update_item'         => __( 'Update Item', 'sohe' ),
+		'search_items'        => __( 'Search Item', 'sohe' ),
+		'not_found'           => __( 'Not found', 'sohe' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'sohe' ),
+	);
+	$rewrite = array(
+		'slug'                => 'how-to',
+		'with_front'          => false,
+		'pages'               => true,
+		'feeds'               => true,
+	);
+	$args = array(
+		'label'               => __( 'how-to', 'sohe' ),
+		'description'         => __( 'How Tos & Instructions', 'sohe' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'page-attributes', ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+//		'menu_icon'           => '',
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'rewrite'             => $rewrite,
+		'capability_type'     => 'post',
+	);
+	register_post_type( 'how-to', $args );
+
 $labels = array(
 		'name'                       => _x( 'Departments', 'Taxonomy General Name', 'sohe' ),
 		'singular_name'              => _x( 'Department', 'Taxonomy Singular Name', 'sohe' ),

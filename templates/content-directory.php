@@ -1,11 +1,5 @@
 <div class="row">
-  <div class="<?php echo roots_sidebar_class(); ?>">
-    <div class="list-group">
-      <?php if( get_field( 'side_menu' ) ) : ?>
-          <?php the_field( 'side_menu' ); ?>
-      <?php endif; ?>
-    </div>
-  </div>
+  <?php get_template_part('templates/sidebar', 'left'); ?>
   <div class="col-sm-9">
 <?php $args = array (
   'post_type'              => 'staff',

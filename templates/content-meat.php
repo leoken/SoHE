@@ -1,30 +1,33 @@
 <div class="row">
-  <div class="<?php echo roots_sidebar_class(); ?>">
-    <div class="list-group">
-      <?php if( get_field( 'side_menu' ) ) : ?>
-          <?php the_field( 'side_menu' ); ?>
-      <?php endif; ?>
-    </div>
-  </div>
+  <?php get_template_part('templates/sidebar', 'left'); ?>
   <div class="col-sm-9">
-  <?php if (!have_posts()) : ?>
-    <div class="alert alert-warning">
-      <?php _e('Sorry, no results were found.', 'roots'); ?>
-    </div>
-    <?php get_search_form(); ?>
-  <?php endif; ?>
 
   <?php while (have_posts()) : the_post(); ?>
-    <?php get_template_part('templates/content', get_post_format()); ?>
-  <?php endwhile; ?>
+    
+<?php 
+$posts = get_field('columns');
+if( $posts ): ?>
+<div class="row">
 
-  <?php if ($wp_query->max_num_pages > 1) : ?>
-    <nav class="post-nav">
-      <ul class="pager">
-        <li class="previous"><?php next_posts_link(__('&larr; Older posts', 'roots')); ?></li>
-        <li class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'roots')); ?></li>
-      </ul>
-    </nav>
-  <?php endif; ?>
+      <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+        <?php setup_postdata($post); ?>
+<div class="col-sm-4">
+        <a href="<?php echo get_permalink( $p->ID ); ?>"><?php echo get_the_post_thumbnail($p->ID, 'post-thumbnail', array('class' => 'img-circle img-responsive')); ?></a>
+        <h3><a href="<?php echo get_permalink( $p->ID ); ?>"><?php echo get_the_title( $p->ID ); ?></a></h3>
+        <p>
+          <?php echo get_the_excerpt(); ?>
+        </p>
+        <a class="btn btn-primary" href="<?php echo get_permalink( $p->ID ); ?>">
+          <?php if( is_singular( 'staff' )) { ?>View Profile<?php } ?>
+          <?php if( is_singular( 'event' )) { ?>Event Details<?php } ?>
+          <?php if( is_singular()) { ?>Read More<?php } ?>
+        </a>
+</div>
+  <?php endforeach; ?>
+  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+</div>
+<?php endif; ?>
+
+  <?php endwhile; ?>
   </div>
 </div>
