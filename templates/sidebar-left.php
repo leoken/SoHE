@@ -5,12 +5,12 @@
           wp_nav_menu(array('theme_location' => 'prospective_students_navigation', 'menu_class' => ''));
         endif;
       } ?>
-       <?php if (is_tree(11)) {
+       <?php if (is_tree(11) || is_singular( 'staff' )) {
         if (has_nav_menu('who_we_are_navigation')) :
           wp_nav_menu(array('theme_location' => 'who_we_are_navigation', 'menu_class' => ''));
         endif;
       } ?>
-       <?php if (is_tree(13)) {
+       <?php if (is_tree(13) || is_singular('event')) {
         if (has_nav_menu('what_we_do_navigation')) :
           wp_nav_menu(array('theme_location' => 'what_we_do_navigation', 'menu_class' => ''));
         endif;

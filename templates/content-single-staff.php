@@ -1,29 +1,35 @@
-<?php while (have_posts()) : the_post(); ?>
-  <article <?php post_class(); ?>>
-      <div class="thumbnail">
-        <a href="<?php the_permalink(); ?>" class="">
-        <?php 
-        if ( has_post_thumbnail() ) {
-          the_post_thumbnail('featured-single', array('class' => 'img-responsive'));
-        } 
-        ?>
-        </a>
-      </div>
-    <header>
-      <h1 class="entry-title"><?php the_title(); ?></h1>
-      <?php get_template_part('templates/entry-meta'); ?>
-    </header>
-    <div class="entry-content">
-      <?php the_content(); ?>
+<div class="row">
+<?php get_template_part('templates/sidebar', 'left'); ?>
+  <div class="col-sm-9">
+  <?php while (have_posts()) : the_post(); ?>
+    <div class="row">
+      <article <?php post_class(); ?>>
+          <div class="col-sm-3">
+            <div class="thumbnail">
+              <a href="<?php the_permalink(); ?>" class="">
+              <?php 
+              if ( has_post_thumbnail() ) {
+                the_post_thumbnail('featured-single', array('class' => 'img-responsive'));
+              } 
+              ?>
+              </a>
+            </div>
+            <div>
+              <h1 class="entry-title"><?php the_title(); ?></h1>
+              <?php get_template_part('templates/entry-meta'); ?>
+            </div>
+          </div>
+          <div class="col-sm-9">
+            <div class="entry-content">
+              <?php the_content(); ?>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
-    <footer>
-        <nav class="post-nav">
-          <ul class="">
-            <li class="pull-left"><?php previous_post_link(); ?></li>
-            <li class="pull-right"><?php next_post_link(); ?></li>
-          </ul>
-        </nav>
-    </footer>
-    <?php comments_template('/templates/comments.php'); ?>
-  </article>
-<?php endwhile; ?>
+
+  <?php endwhile; ?>
+    <?php get_template_part('templates/content', 'well'); ?>
+    <?php get_template_part('templates/content', 'tabs'); ?>
+  </div>
+</div>

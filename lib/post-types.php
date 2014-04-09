@@ -117,7 +117,7 @@ function sohe_post_types() {
 		'label'               => __( 'how-to', 'sohe' ),
 		'description'         => __( 'How Tos & Instructions', 'sohe' ),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'page-attributes', ),
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'page-attributes', ),
 		'hierarchical'        => false,
 		'public'              => true,
 		'show_ui'             => true,

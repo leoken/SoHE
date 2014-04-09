@@ -19,7 +19,7 @@ function roots_setup() {
   ));
 
   // Add post thumbnails (http://codex.wordpress.org/Post_Thumbnails)
-  add_theme_support('post-thumbnails', array( 'post', 'page' ));
+  add_theme_support('post-thumbnails', array( 'post', 'page', 'staff', 'event', 'how-to' ));
   set_post_thumbnail_size(260, 260, true);
   add_image_size('medium', 300, 300, true);
   add_image_size('featured-thumb', 380, 380, true);
