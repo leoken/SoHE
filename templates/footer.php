@@ -1,5 +1,5 @@
 <?php if (is_front_page()) { ?>
-<footer class="content-info" role="contentinfo">
+<footer class="content-info-main" role="contentinfo">
   <div class="container">
     <div class="row">
       <a class="brand" href="<?php echo home_url('/') ?>"><?php bloginfo('name'); ?></a>
