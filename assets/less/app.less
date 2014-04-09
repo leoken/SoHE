@@ -292,7 +292,7 @@ body.page-template-template-meat-php #footer-image {
   float: right;
   margin-top: -20px;
   li a {
-    color: #666;
+    color: @gray-dark;
   }
 }
 
@@ -375,10 +375,6 @@ body.page-template-template-meat-php #footer-image {
   margin-bottom: 0px;
 }
 
-.nav-mini>li>a {
-
-}
-
 .thumbnail-wrapper {
   display: inline;
   &:before {
@@ -397,6 +393,15 @@ body.page-template-template-meat-php #footer-image {
     background-repeat: no-repeat;
     background-color: transparent;
     background-position: 15px 0;
+  }
+}
+
+.nav-pills {
+  li {
+    a {
+      padding: 10px;
+      color: @gray-dark;
+    }
   }
 }
 
