@@ -314,8 +314,40 @@ body.page-template-template-meat-php #footer-image {
       background-color: @brand-primary;
     }
   }
-  
 }
+
+form label {
+  font-family: 'Oswald', sans-serif;
+}
+
+.search-form {
+  .input-group-btn {
+    float: left;
+    display: inline;
+    position: absolute;
+    right: 70px;
+    top: 0;
+  }
+  .form-control {
+    padding-right: 50px;
+  }
+  .fa-circle {
+    color: @brand-primary;
+  }
+}
+
+.btn-search-icon {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  &:hover, &:focus {
+    color: inherit;
+  }
+}
+
+
+
 
 .social {
   text-align: center;
@@ -515,8 +547,13 @@ body.page-template-template-meat-php #footer-image {
 }
 
 .moretag {
-  float: left;
   font-size: 24px;
+  position: absolute;
+  bottom: -15px;
+  left: 15px;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 article { 
@@ -528,6 +565,9 @@ article {
   }
   footer {
     margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .entry-summary {
     margin-bottom: 30px;
   }
 }

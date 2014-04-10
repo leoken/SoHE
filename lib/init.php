@@ -4,18 +4,18 @@
  */
 function roots_setup() {
   // Make theme available for translation
-  load_theme_textdomain('roots', get_template_directory() . '/lang');
+  load_theme_textdomain('sohe', get_template_directory() . '/lang');
 
   // Register wp_nav_menu() menus (http://codex.wordpress.org/Function_Reference/register_nav_menus)
   register_nav_menus(array(
-    'primary_navigation' => __('Primary Navigation', 'roots'),
-    'mini_navigation' => __('Mini Navigation', 'roots'),
-    'directory_filter_navigation' => __('Directory Filter Navigation', 'roots'),
-    'prospective_students_navigation' => __('Prospective Students Navigation', 'roots'),
-    'who_we_are_navigation' => __('Who We Are Navigation', 'roots'),
-    'what_we_do_navigation' => __('What We Do Navigation', 'roots'),
-    'why_we_do_it_navigation' => __('Why We Do It Navigation', 'roots'),
-    'get_involved_navigation' => __('Get Involved Navigation', 'roots'),
+    'primary_navigation' => __('Primary Navigation', 'sohe'),
+    'mini_navigation' => __('Mini Navigation', 'sohe'),
+    'directory_filter_navigation' => __('Directory Filter Navigation', 'sohe'),
+    'prospective_students_navigation' => __('Prospective Students Navigation', 'sohe'),
+    'who_we_are_navigation' => __('Who We Are Navigation', 'sohe'),
+    'what_we_do_navigation' => __('What We Do Navigation', 'sohe'),
+    'why_we_do_it_navigation' => __('Why We Do It Navigation', 'sohe'),
+    'get_involved_navigation' => __('Get Involved Navigation', 'sohe'),
   ));
 
   // Add post thumbnails (http://codex.wordpress.org/Post_Thumbnails)
