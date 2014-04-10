@@ -407,27 +407,6 @@ form label {
   margin-bottom: 0px;
 }
 
-.thumbnail-wrapper {
-  display: inline;
-  &:before {
-    z-index: 2000;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-
-    padding-right: 15px;
-    padding-left: 15px;
-    content: " ";
-    background-image: url(/wp-content/uploads/circle-highlight.png);
-    background-size: 90%;
-    background-repeat: no-repeat;
-    background-color: transparent;
-    background-position: 15px 0;
-  }
-}
-
 .nav-pills {
   li {
     a {
@@ -517,14 +496,43 @@ form label {
   }
 }
 
-.thumbnail-mask {
-  background-size: cover, cover;
-  background-repeat: no-repeat, no-repeat;
-  background-position: top, left, top, left;
-  display: block;
-  width: 252px;
-  height: 252px;
+.thumbnail-wrapper {
+  display: inline;
 }
+
+
+.thumbnail-link {
+  text-decoration: none!important;
+  .thumbnail-mask {
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top, left, top, left;
+    display: block;
+    width: 252px;
+    height: 252px;
+    text-align: center;
+    .hover-text {
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 24px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 700;
+      position: relative;
+      top: 42%;
+      display: none;
+    }
+    &:hover {
+      background-size: cover, cover, cover;
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-position: top, left, top, left, top, left;
+      .hover-text {
+        display: block!important;
+      }
+    }
+  }
+}
+
+
 
 .gallery-row {
   padding: 5px 0!important;
