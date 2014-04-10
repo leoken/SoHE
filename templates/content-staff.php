@@ -1,13 +1,7 @@
 <article <?php post_class('col-sm-4'); ?>>
 <div id="thumbnail-wrap" class="">
 	<div class="thumbnail-wrapper">
-		<a href="<?php the_permalink(); ?>" class="">
-		<?php 
-		if ( has_post_thumbnail() ) {
-		  the_post_thumbnail('medium', array('class' => 'img-mask img-responsive'));
-		} 
-		?>
-		</a>
+		<?php get_template_part('templates/content', 'featured-image'); ?>
 	</div>
 </div>
 <div class="">

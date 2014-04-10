@@ -1,13 +1,14 @@
 <div class="row">
   <?php get_template_part('templates/sidebar', 'left'); ?>
   <div class="col-sm-9">
-    <?php $args = array (
+  <?php $args = array (
       'post_type'              => 'staff',
       'posts_per_page'         => '12',
       'orderby'                => 'menu_order',
     );
-    $query = new WP_Query( $args );
-    ?>
+    $query = new WP_Query( $args ); ?>
+  <?php wp_nav_menu(array('menu' => 'Directory Filter', 'menu_class' => 'nav nav-pills',)); ?>
+
     <?php if (!have_posts()) : ?>
       <div class="alert alert-warning">
         <?php _e('Sorry, no results were found.', 'roots'); ?>
@@ -15,7 +16,6 @@
       <?php get_search_form(); ?>
     <?php endif; ?>
 
-  <?php wp_nav_menu(array('menu' => 'Directory Filter', 'menu_class' => 'nav nav-pills',)); ?>
   <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 
     <?php get_template_part('templates/content', 'staff'); ?>

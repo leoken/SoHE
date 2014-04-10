@@ -485,6 +485,15 @@ body.page-template-template-meat-php #footer-image {
   }
 }
 
+.thumbnail-mask {
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, left, top, left;
+  display: block;
+  width: 252px;
+  height: 252px;
+}
+
 .gallery-row {
   padding: 5px 0!important;
   .col-sm-2, .col-lg-2 {
@@ -716,6 +725,20 @@ border-radius: 1px;
     }
 }
 
-@media (min-width: @screen-md-min) { }
+@media (min-width: @screen-md-min) {
 
-@media (min-width: @screen-lg-min) { }
+  .thumbnail-mask {
+    width: 202px;
+    height: 202px;
+  }
+
+}
+
+@media (min-width: @screen-lg-min) {
+
+    .thumbnail-mask {
+    width: 252px;
+    height: 252px;
+  }
+
+}
