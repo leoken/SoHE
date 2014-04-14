@@ -52,7 +52,11 @@ endif; ?>
 </style>
 <a href="<?php the_permalink(); ?>" class="thumbnail-link">
 <div id="thumbnail-<?php echo $post->ID; ?>"  class="thumbnail-mask">
-	<span class="hover-text">View Profile</span>
+	<span class="hover-text">
+		<?php if (is_page('faculty-staff')) { ?>View Profile<?php } ?>
+		<?php if (is_page('calendar-of-events')) { ?>Event Details<?php } ?>
+		<?php if (is_page('blog')) { ?>Read More<?php } ?>
+	</span>
 </div>
 </a>
 <?php endif; ?>

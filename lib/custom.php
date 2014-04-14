@@ -74,3 +74,18 @@ function custom_fix_blog_tab_on_cpt($classes,$item,$args) {
 }
 add_filter('nav_menu_css_class','custom_fix_blog_tab_on_cpt',10,3);
 
+
+
+
+// http://codex.wordpress.org/Function_Reference/wp_list_pages
+function get_post_top_ancestor_id(){
+    global $post;
+    
+    if($post->post_parent){
+        $ancestors = array_reverse(get_post_ancestors($post->ID));
+        return $ancestors[0];
+    }
+    
+    return $post->ID;
+}
+

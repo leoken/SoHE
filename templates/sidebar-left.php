@@ -1,6 +1,29 @@
-  <div class="col-sm-3">
+<div class="col-sm-3">
     <div class="list-group">
-      <?php if (is_tree(9)) {
+
+<?php 
+// use wp_list_pages to display parent and all child pages all generations (a tree with parent)
+$parent = 209;
+$args=array(
+  'child_of' => $parent
+);
+$pages = get_pages($args);  
+if ($pages) {
+  $pageids = array();
+  foreach ($pages as $page) {
+    $pageids[]= $page->ID;
+  }
+
+  $args=array(
+    'title_li' => 'Tree of Parent Page ' . $parent,
+    'sort_column'  => 'menu_order',
+    'include' =>  $parent . ',' . implode(",", $pageids)
+  );
+  wp_list_pages($args);
+}
+?>
+
+      <?php /* if (is_tree(209)) {
         if (has_nav_menu('prospective_students_navigation')) :
           wp_nav_menu(array('theme_location' => 'prospective_students_navigation', 'menu_class' => ''));
         endif;
@@ -24,6 +47,7 @@
         if (has_nav_menu('get_involved_navigation')) :
           wp_nav_menu(array('theme_location' => 'get_involved_navigation', 'menu_class' => ''));
         endif;
-      } ?>
+      } */ ?>
     </div>
+    <?php dynamic_sidebar('sidebar-left'); ?>
   </div>
