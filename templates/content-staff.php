@@ -1,4 +1,4 @@
-<article <?php post_class('col-sm-4'); ?>>
+<article <?php if(is_page('faculty-staff')){ post_class('col-sm-4'); } elseif (is_singular('staff')) { post_class('col-sm-3'); }?>>
 <div id="thumbnail-wrap" class="">
 	<div class="thumbnail-wrapper">
 		<?php get_template_part('templates/content', 'featured-image'); ?>

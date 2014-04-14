@@ -30,6 +30,11 @@ var Roots = {
         scrollProperty: 'scroll',
         positionProperty: 'position'
       });
+
+      $('#menu-directory-filter a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+      });
     }
   },
   // Home page

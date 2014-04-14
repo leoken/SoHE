@@ -1,14 +1,18 @@
 <header class="banner container" role="banner">
   <div class="row">
     <div class="col-lg-12">
-      <a class="brand" href="<?php echo home_url('/') ?>"><?php bloginfo('name'); ?></a>
-      <nav class="nav-mini" role="navigation">
-        <?php
-          if (has_nav_menu('mini_navigation')) :
-            wp_nav_menu(array('theme_location' => 'mini_navigation', 'menu_class' => 'nav nav-pills'));
-          endif;
-        ?>
-      </nav>
+      <div class="navbar-left"><a class="brand" href="<?php echo home_url('/') ?>"><?php bloginfo('name'); ?></a></div>
+      <div class="navbar-right pull-right">
+        <div class="navbar-search-box pull-right"><?php get_search_form(); ?></div>
+        <nav class="nav-mini pull-left" role="navigation">
+          <?php
+            if (has_nav_menu('mini_navigation')) :
+              wp_nav_menu(array('theme_location' => 'mini_navigation', 'menu_class' => 'nav nav-pills'));
+            endif;
+          ?>
+        </nav>
+      </div>
+      
     </div>
   </div>
 </header>

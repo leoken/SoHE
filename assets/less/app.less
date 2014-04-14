@@ -111,6 +111,9 @@ body.single {
 
 blockquote {
   font-family: 'Oswald', sans-serif;
+  background-image: url(/wp-content/uploads/quotes-open.png), url(/wp-content/uploads/quotes-close.png);
+  background-position: 2% 0, 98% 100%;
+  background-repeat: no-repeat, no-repeat;
   background-color: #80B653;
   text-transform: uppercase;
   color: #fff;
@@ -118,6 +121,7 @@ blockquote {
   border-left: 0;
   font-weight: 700;
   padding: 50px 20px;
+  /*
   &:after {
     content: "“";
     font-size: 142px;
@@ -138,6 +142,22 @@ blockquote {
     bottom: -40px;
     right: 40px;
     position: absolute;
+  }
+  */
+}
+
+.single-staff {
+  blockquote {
+    background-color: #FFAD3B;
+  }
+}
+
+#directory-tabs {
+  #directory-tabs-title {
+    text-align: center;
+  }
+  #menu-directory-filter {
+    text-align: center;
   }
 }
 
@@ -287,13 +307,20 @@ body.page-template-template-meat-php #footer-image {
   position: relative;
 }
 
-.nav-mini {
+.navbar-right {
   width: 50%;
-  float: right;
-  margin-top: -20px;
+}
+
+.nav-mini {
+  float: left;
+  margin-top: 30px;
   li a {
     color: @gray-dark;
   }
+}
+
+.navbar-search-box {
+  margin-top: 30px;
 }
 
 .marketing {
@@ -320,13 +347,15 @@ form label {
   font-family: 'Oswald', sans-serif;
 }
 
+
+
 .search-form {
   .input-group-btn {
-    float: left;
     display: inline;
     position: absolute;
     right: 70px;
     top: 0;
+    z-index: 1050;
   }
   .form-control {
     padding-right: 50px;
@@ -343,6 +372,17 @@ form label {
   margin: 0;
   &:hover, &:focus {
     color: inherit;
+  }
+}
+
+.navbar-search-box {
+  .search-form {
+  .input-group-btn {
+      right: 35px;
+    }
+    .form-control {
+      padding-right: 40px;
+    }
   }
 }
 
@@ -748,6 +788,8 @@ width: 32px;
 height: 3px;
 border-radius: 1px;
 }
+
+
 
 /* ==========================================================================
    Media Queries

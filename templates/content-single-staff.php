@@ -20,9 +20,9 @@
             <div class="entry-content">
               <?php the_content(); ?>
             </div>
+          </div>
             <?php get_template_part('templates/content', 'well'); ?>
             <?php get_template_part('templates/content', 'tabs'); ?>
-          </div>
         </div><!-- /.col-sm-9 -->
       </article>
     </div><!-- /.row -->
