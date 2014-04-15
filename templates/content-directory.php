@@ -1,5 +1,5 @@
 <div id="directory-tabs" class="row">
-  <h2 id="directory-tabs-title">Meet more of the SoHE Team</h2>
+  <?php if(is_singular('staff')) { ?><h2 id="directory-tabs-title">Meet more of the SoHE Team</h2><?php } ?>
   <?php if(!is_singular('staff')) { get_template_part('templates/sidebar', 'left'); } ?>
   <div class="<?php if(!is_singular('staff')) { ?>col-sm-9<?php } ?><?php if(is_page('staff-faculty')) { ?>col-sm-12<?php } ?>">
     <?php wp_nav_menu(array('menu' => 'Directory Filter', 'menu_class' => 'nav nav-pills',)); ?>
@@ -9,7 +9,7 @@
       <div class="tab-pane active" id="all">
           <?php $args = array (
               'post_type'              => 'staff',
-              'posts_per_page'         => '12',
+              'posts_per_page'         => '-1',
               'orderby'                => 'menu_order',
             );
             $query = new WP_Query( $args ); ?>
@@ -28,7 +28,7 @@
       <div class="tab-pane" id="staff">
     <?php $args = array (
         'post_type'              => 'staff',
-        'posts_per_page'         => '12',
+        'posts_per_page'         => '-1',
         'orderby'                => 'menu_order',
         'tax_query' => array(
               array(
@@ -55,7 +55,7 @@
       <div class="tab-pane" id="faculty">
     <?php $args = array (
         'post_type'              => 'staff',
-        'posts_per_page'         => '12',
+        'posts_per_page'         => '-1',
         'orderby'                => 'menu_order',
         'tax_query' => array(
               array(
@@ -82,7 +82,7 @@
       <div class="tab-pane" id="consumer-science">
     <?php $args = array (
         'post_type'              => 'staff',
-        'posts_per_page'         => '12',
+        'posts_per_page'         => '-1',
         'orderby'                => 'menu_order',
         'tax_query' => array(
               array(
@@ -109,7 +109,7 @@
       <div class="tab-pane" id="consumer-science">
     <?php $args = array (
         'post_type'              => 'staff',
-        'posts_per_page'         => '12',
+        'posts_per_page'         => '-1',
         'orderby'                => 'menu_order',
         'tax_query' => array(
               array(
@@ -136,7 +136,7 @@
       <div class="tab-pane" id="design-studies">
     <?php $args = array (
         'post_type'              => 'staff',
-        'posts_per_page'         => '12',
+        'posts_per_page'         => '-1',
         'orderby'                => 'menu_order',
         'tax_query' => array(
               array(
@@ -163,7 +163,7 @@
       <div class="tab-pane" id="human-development-family-studies">
     <?php $args = array (
         'post_type'              => 'staff',
-        'posts_per_page'         => '12',
+        'posts_per_page'         => '-1',
         'orderby'                => 'menu_order',
         'tax_query' => array(
               array(

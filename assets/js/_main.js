@@ -35,8 +35,51 @@ var Roots = {
         e.preventDefault();
         $(this).tab('show');
       });
-    }
-  },
+      $('.nav-tabs a:first').tab('show');
+      $('.collapse').collapse();
+
+      $('li.menu-all').find('a').each(function () {
+       $(this).attr('href', '#all');
+       $(this).attr('data-target', '#all');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.menu-staff').find('a').each(function () {
+       $(this).attr('href', '#staff');
+       $(this).attr('data-target', '#staff');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.menu-faculty').find('a').each(function () {
+       $(this).attr('href', '#faculty');
+       $(this).attr('data-target', '#faculty');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.menu-consumer-science').find('a').each(function () {
+       $(this).attr('href', '#consumer-science');
+       $(this).attr('data-target', '#consumer-science');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.menu-design-studies').find('a').each(function () {
+       $(this).attr('href', '#design-studies');
+       $(this).attr('data-target', '#design-studies');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.menu-human-development-family-studies').find('a').each(function () {
+       $(this).attr('href', '#human-development-family-studies');
+       $(this).attr('data-target', '#human-development-family-studies');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.menu-interdisciplinary-studies').find('a').each(function () {
+       $(this).attr('href', '#interdisciplinary-studies');
+       $(this).attr('data-target', '#interdisciplinary-studies');
+       $(this).attr('data-toggle', 'tab');
+      });
+
+      $('a.pdfbutton').each(function () {
+       $(this).attr('class', 'list-group-item');
+      });
+
+        }
+      },
   // Home page
   home: {
     init: function() {
