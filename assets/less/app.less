@@ -521,11 +521,11 @@ form label {
     }
   }
   h2.entry-title {
-  font-size: 16px;
+  font-size: 16px!important;
     a {
-      text-transform: uppercase;
-      color: #000;
-      text-decoration: none;
+      text-transform: uppercase!important;
+      color: #000!important;
+      text-decoration: none!important;
     }
   }
   #thumbnail-wrap {
@@ -569,6 +569,15 @@ form label {
         display: block!important;
       }
     }
+  }
+}
+
+
+
+.staff-meta div[class*="staff"] {
+  margin-bottom: 15px;
+  address {
+    margin-bottom: 0!important;
   }
 }
 
@@ -620,20 +629,6 @@ article {
   }
 }
 
-article.staff { 
-  padding-bottom: 40px;
-  header {
-    padding-bottom: 0;
-    h2 {
-      margin-bottom: 0;
-      padding: 0;
-    }
-    p {
-
-    }
-  }
-}
-
 body.single article { 
   header {
     padding-bottom: 20px;
@@ -646,8 +641,39 @@ body.single article {
   }
 }
 
+article.staff { 
+  padding-bottom: 40px;
+  header {
+    margin-bottom: 0!important;
+    padding-bottom: 0!important;
+    h2 {
+      font-size: 16px!important;
+      margin-bottom: 0;
+      padding: 0;
+    }
+    p {
+
+    }
+  }
+  .entry-summary {
+    line-height: normal;
+    margin-top: 5px;
+    margin-bottom: 30px;
+  }
+}
+
+
+
 
 #main-posts article:nth-of-type(4n) {
+  clear: left;
+}
+
+body.single-staff #directory-tabs article:nth-of-type(4n) {
+  clear: left;
+}
+
+body.page-template-template-directory-php #directory-tabs article:nth-of-type(3n) {
   clear: left;
 }
 
@@ -655,6 +681,18 @@ body.single article {
 
 body.single h1.entry-title {
   text-transform: uppercase;
+  margin-top: 5px;
+}
+
+article.type-staff h2.entry-title {
+  text-transform: uppercase;
+  color: #000;
+  margin-top: 5px!important;
+  font-size: inherit;
+  a {
+    color: #000;
+    text-decoration: none;
+  }
 }
 
 .sidebar section.widget_search {
@@ -765,6 +803,8 @@ body.page-template-template-meat-php {
     display: none;
   }
 }
+
+
 /* ==========================================================================
    WordPress Generated Classes
    See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes

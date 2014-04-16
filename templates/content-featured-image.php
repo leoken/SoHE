@@ -53,8 +53,8 @@ endif; ?>
 <a href="<?php the_permalink(); ?>" class="thumbnail-link">
 <div id="thumbnail-<?php echo $post->ID; ?>"  class="thumbnail-mask">
 	<span class="hover-text">
-		<?php if (is_page('faculty-staff')) { ?>View Profile<?php } ?>
-		<?php if (is_page('calendar-of-events')) { ?>Event Details<?php } ?>
+		<?php if (is_singular('staff') || is_page('faculty-staff')) { ?>View Profile<?php } ?>
+		<?php if (is_singular('event') || is_page('calendar-of-events')) { ?>Event Details<?php } ?>
 		<?php if (is_page('blog')) { ?>Read More<?php } ?>
 	</span>
 </div>

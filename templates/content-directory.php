@@ -106,33 +106,6 @@
   <?php endwhile; ?>
       </div>
 
-      <div class="tab-pane" id="consumer-science">
-    <?php $args = array (
-        'post_type'              => 'staff',
-        'posts_per_page'         => '-1',
-        'orderby'                => 'menu_order',
-        'tax_query' => array(
-              array(
-                'taxonomy' => 'department',
-                'field' => 'slug',
-                'terms' => 'consumer-science'
-              )
-            )
-      );
-      $query = new WP_Query( $args ); ?>
-    <?php if (!have_posts()) : ?>
-      <div class="alert alert-warning">
-        <?php _e('Sorry, no results were found.', 'roots'); ?>
-      </div>
-    <?php endif; ?>
-
-  <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-
-    <?php get_template_part('templates/content', 'staff'); ?>
-
-  <?php endwhile; ?>
-      </div>
-
       <div class="tab-pane" id="design-studies">
     <?php $args = array (
         'post_type'              => 'staff',
