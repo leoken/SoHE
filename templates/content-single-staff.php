@@ -11,7 +11,7 @@
                 the_post_thumbnail('medium', array('class' => 'img-mask img-responsive'));
               } ?>
             </div>
-            <div>
+            <div class="meta-wrapper">
               <h1 class="entry-title"><?php the_title(); ?></h1>
               <?php get_template_part('templates/meta-staff'); ?>
             </div>
