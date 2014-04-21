@@ -4,6 +4,10 @@
       <?php 
         // use wp_list_pages to display parent and all child pages all generations (a tree with parent)
         $parent = get_post_top_ancestor_id();
+        $spanid = $page->ID;
+        $spanclass = 'plus-button';
+        $parentid = $page->ID;
+        $parentclass = 'parent-' . $parentid;
         $args=array(
           'child_of' => $parent
         );
@@ -14,16 +18,12 @@
             $pageids[]= $page->ID;
           }
 
-          $spanid = $page->ID;
-          $spanclass = 'plus-button';
-          $kids = 'child-menu';
-          $parentid = 307;
-          $parentclass = 'child-menu-' . $parentid;
           $args=array(
             'sort_column'  => 'menu_order',
             'title_li'=> '',
-            'link_before' => '<span id="' . $spanid . '" class="' . $spanclass . '" data-toggle="collapse" data-target="' . $parentclass . '">+</span>',
-            'include' =>  $parent . ',' . implode(",", $pageids)
+            'link_before' => '<span id="menu-' . $parentclass . '" class="' . $spanclass . '" data-toggle="collapse" data-target="' . $parentclass . '">+</span>',
+            'include' =>  $parent . ',' . implode(",", $pageids),
+            'walker' => new My_Walker
           );
           wp_list_pages($args);
         } ?>

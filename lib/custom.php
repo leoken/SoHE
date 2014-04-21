@@ -101,3 +101,35 @@ function add_parent_class( $css_class, $page, $depth, $args )
     return $css_class;
 }
 add_filter( 'page_css_class', 'add_parent_class', 10, 4 );
+
+function the_slug($id) {
+  $post_data = get_post($id, ARRAY_A);
+  $slug = $post_data['post_name'];
+  return $slug; 
+}
+
+class My_Walker extends Walker_Page {
+
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat("\t", $depth);
+
+        if ($depth == 1 || $depth == 2 || $depth == 3 || $depth == 4) {
+            $output .= "\n$indent<div id='something' class='children-collapse collapse children-l1'><div class='children-body'><ul>\n";
+        } else {
+            $output .= "\n$indent<ul id='something' class='children'>\n";
+        }
+    }
+
+    function end_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat("\t", $depth);
+
+        if ($depth == 1 || $depth == 2 || $depth == 3 || $depth == 4) {
+            $output .= "$indent</ul></div></div>\n";
+        } else {
+            $output .= "$indent</ul>\n";
+        }
+    }
+}
+
+
+
