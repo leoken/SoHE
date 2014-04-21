@@ -34,6 +34,19 @@ function new_excerpt_more($more) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
+
+// http://codex.wordpress.org/Function_Reference/wp_list_pages
+function get_post_top_ancestor_id(){
+    global $post;
+    
+    if($post->post_parent){
+        $ancestors = array_reverse(get_post_ancestors($post->ID));
+        return $ancestors[0];
+    }
+    
+    return $post->ID;
+}
+
 // http://css-tricks.com/snippets/wordpress/if-page-is-parent-or-child/
 function is_tree($pid)
 {
@@ -53,12 +66,12 @@ function is_tree($pid)
   }
 };
 
+
+
 add_action( 'init', 'my_add_excerpts_to_pages' );
 function my_add_excerpts_to_pages() {
      add_post_type_support( 'page', 'excerpt' );
 }
-
-
 
 // http://wordpress.org/support/topic/blog-tab-gets-highlighted-in-nav-menu-for-custom-post-types
 function custom_fix_blog_tab_on_cpt($classes,$item,$args) {
@@ -74,17 +87,17 @@ function custom_fix_blog_tab_on_cpt($classes,$item,$args) {
 }
 add_filter('nav_menu_css_class','custom_fix_blog_tab_on_cpt',10,3);
 
+// http://wordpress.org/support/topic/adding-classes-to-wp_list_pages
+// add_filter('wp_list_pages', create_function('$t', 'return str_replace("<ul class="children" ", "<div class=\"collapse\" ", $t);'));
 
 
-
-// http://codex.wordpress.org/Function_Reference/wp_list_pages
-function get_post_top_ancestor_id(){
-    global $post;
-    
-    if($post->post_parent){
-        $ancestors = array_reverse(get_post_ancestors($post->ID));
-        return $ancestors[0];
-    }
-    
-    return $post->ID;
+//http://wordpress.stackexchange.com/questions/11821/class-parent-for-wp-list-pages
+function add_parent_class( $css_class, $page, $depth, $args )
+{
+    $parentid = $page->ID;
+    $parentclass = 'parent-' . $parentid;
+    if ( ! empty( $args['has_children'] ) )
+        $css_class[] = $parentclass;
+    return $css_class;
 }
+add_filter( 'page_css_class', 'add_parent_class', 10, 4 );

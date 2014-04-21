@@ -73,9 +73,19 @@ var Roots = {
        $(this).attr('data-target', '#interdisciplinary-studies');
        $(this).attr('data-toggle', 'tab');
       });
+      $('li.menu-interdisciplinary-studies').find('a').each(function () {
+       $(this).attr('href', '#interdisciplinary-studies');
+       $(this).attr('data-target', '#interdisciplinary-studies');
+       $(this).attr('data-toggle', 'tab');
+      });
 
-      $('a.pdfbutton').each(function () {
-       $(this).attr('class', 'list-group-item');
+      $('.parent-307 ul.children').each(function () {
+       $(this).attr('id', 'child-menu-307');
+      });
+
+      $('.plus-button').click(function (e) {
+        e.preventDefault();
+        $(this).collapse('toggle');
       });
 
         }

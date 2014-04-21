@@ -3,7 +3,6 @@
  */
 
 @import "bootstrap/bootstrap.less";
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,700);
 /* ==========================================================================
    Base
    ========================================================================== */
@@ -29,7 +28,7 @@ body.page-template-template-meat-php {
   }
 }
 
-body.page-id-9,
+body.page-id-209,
 body.page-id-11,
 body.page-id-13,
 body.page-id-15,
@@ -43,7 +42,9 @@ body.blog {
   }
 }
 
+.pagenav {
 
+}
 
 /* ==========================================================================
    Header
@@ -78,7 +79,7 @@ body.blog {
 }
 
 #menu-primary-navigation li a {
-  font-family: 'Oswald', sans-serif;
+  font-family: @font-family-secondary;
   text-transform: uppercase;
   font-size: 26px;
   line-height: 12px;
@@ -91,12 +92,12 @@ body.blog {
 }
 
 .btn {
-  font-family: 'Oswald', sans-serif;
+  font-family: @font-family-secondary;
   text-transform: uppercase;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Oswald', sans-serif;
+  font-family: @font-family-secondary;
 }
 
 body.single {
@@ -110,7 +111,7 @@ body.single {
    ========================================================================== */
 
 blockquote {
-  font-family: 'Oswald', sans-serif;
+  font-family: @font-family-secondary;
   background-image: url(/wp-content/uploads/quotes-open.png), url(/wp-content/uploads/quotes-close.png);
   background-position: 2% 0, 98% 100%;
   background-repeat: no-repeat, no-repeat;
@@ -121,29 +122,6 @@ blockquote {
   border-left: 0;
   font-weight: 700;
   padding: 50px 20px;
-  /*
-  &:after {
-    content: "“";
-    font-size: 142px;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-bottom: 0;
-    padding-top: 0;
-    top: 50px;
-    position: absolute;
-  }
-  &:before {
-    content: "”";
-    font-size: 142px;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-bottom: 0;
-    padding-top: 0;
-    bottom: -40px;
-    right: 40px;
-    position: absolute;
-  }
-  */
 }
 
 .single-staff {
@@ -226,9 +204,10 @@ body.page-template-template-meat-php #footer-image {
     margin-left: 0;
     padding-left: 0;
     margin-bottom: 0;
-    padding-bottom: 20px;
-    &:before {
-      content: "+";
+    padding-bottom: 0;
+    .plus-button {
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: inherit;
       display: block;
       float: left;
       margin-right: 5px;
@@ -239,8 +218,13 @@ body.page-template-template-meat-php #footer-image {
         content: "-";
       }
     }
+    ul.children {
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+
       a {
-        font-family: 'Oswald', sans-serif;
+        font-family: @font-family-secondary;
         text-transform: uppercase;
         color: @gray;
         margin-top: 10px;
@@ -344,7 +328,7 @@ body.page-template-template-meat-php #footer-image {
 }
 
 form label {
-  font-family: 'Oswald', sans-serif;
+  font-family: @font-family-secondary;
 }
 
 
@@ -478,7 +462,7 @@ form label {
        a {
         text-transform: uppercase;
         font-size: 14px;
-        font-family: 'Oswald', sans-serif;
+        font-family: @font-family-secondary;
         font-weight: 700;
         color: #fff;
         background-color: @brand-primary;
@@ -555,7 +539,7 @@ form label {
       text-transform: uppercase;
       color: #fff;
       font-size: 24px;
-      font-family: 'Oswald', sans-serif;
+      font-family: @font-family-secondary;
       font-weight: 700;
       position: relative;
       top: 42%;
@@ -841,7 +825,7 @@ border-radius: 1px;
 
 .sidebar {
   display: block;
-  font-family: 'Oswald', sans-serif;
+  font-family: @font-family-secondary;
   text-transform: uppercase;
   color: #000;
   font-size: 24px;
