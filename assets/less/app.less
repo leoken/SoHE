@@ -401,15 +401,18 @@ form label {
   
   .letter {
     position: absolute;
+    z-index: 1060;
     margin: auto;
   }
   
   .call-to-action {
-    height: 264px;
+    max-height: 252px;
     text-align: center;
     background-color: @brand-primary;
+    overflow: hidden;
+    padding: 20px;
     h2 {
-      margin: 60px 0 30px 0;
+      margin: 0;
       color: #fff;
     }
     a {
@@ -557,16 +560,20 @@ form label {
 
 
 #frontpage-jumbotron {
-  .thumbnail-link {
-    text-decoration: none!important;
+  .row {
+    max-height: 252px;
+  }
     .thumbnail-mask {
       background-size: cover, cover;
       background-repeat: no-repeat, no-repeat;
       background-position: top, left, top, left;
       display: block;
-      width: 252px;
-      height: 252px;
+      width: inherit;
+      height: inherit;
       text-align: center;
+      &:hover img {
+        opacity: .5;
+      }
       .hover-text {
         text-transform: uppercase;
         color: #fff;
@@ -575,11 +582,21 @@ form label {
         font-weight: 700;
         position: absolute;
         z-index: 1050;
-        top: 42%;
+        top: 20%;
         display: none;
+        h3 {
+          a {
+            text-decoration: none;
+            text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
+            color: #fff;
+            font-size: 24px;
+            &:hover {text-decoration: none;}
+          }
+        }
         p {display: none;}
       }
       &:hover {
+        cursor: pointer;
         background-size: cover, cover, cover;
         background-repeat: no-repeat, no-repeat, no-repeat;
         background-position: top left, top left, top left;
@@ -588,7 +605,6 @@ form label {
         }
       }
     }
-  }
 }
 
 
@@ -894,6 +910,29 @@ border-radius: 1px;
     float: left;
     margin-top: 0;
     }
+
+  #frontpage-jumbotron {
+    .row {
+      
+    }
+      .thumbnail-mask {
+      width: inherit;
+      height: inherit;
+      }
+  }
+
+
+    .container-fluid {
+      .call-to-action {
+        max-height: 129px;
+        padding: 20px;
+        h2 {
+          margin: 0 0 10% 0;
+          font-size: 18px;
+        }
+      }
+    }
+
 }
 
 @media (min-width: @screen-md-min) {
@@ -903,13 +942,53 @@ border-radius: 1px;
     height: 202px;
   }
 
+  #frontpage-jumbotron {
+    .row {
+      max-height: 202px;
+    }
+      .thumbnail-mask {
+      width: inherit;
+      height: inherit;
+      }
+  }
+
+      .container-fluid {
+      .call-to-action {
+        max-height: 252px;
+        padding: 20px;
+        h2 {
+          margin: 0 0 10% 0;
+          font-size: 24px;
+        }
+      }
+    }
+
+
 }
 
 @media (min-width: @screen-lg-min) {
 
-    .thumbnail-mask {
+  .thumbnail-mask {
     width: 252px;
     height: 252px;
   }
+
+    #frontpage-jumbotron {
+      .thumbnail-mask {
+      width: inherit;
+      height: inherit;
+      }
+  }
+
+    .container-fluid {
+      .call-to-action {
+        max-height: 252px;
+        padding: 20px;
+        h2 {
+          margin: 0 0 10% 0;
+          font-size: 30px;
+        }
+      }
+    }
 
 }

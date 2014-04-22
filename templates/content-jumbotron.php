@@ -128,6 +128,7 @@
         </div>
     </div><!-- end square -->
     <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 r1c4">
+      <img src="/wp-content/uploads/s.png" class="img-responsive letter" alt="S" width="264" height="264" />
       <?php $rows = get_field('row_1'); ?>
       <?php $item_row = $rows[3]; ?>
       <?php
@@ -170,6 +171,7 @@
         </div>
     </div><!-- end square -->
     <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 r1c5">
+      <img src="/wp-content/uploads/o.png" class="img-responsive letter" alt="o" width="264" height="264" />
       <?php $rows = get_field('row_1'); ?>
       <?php $item_row = $rows[4]; ?>
       <?php
