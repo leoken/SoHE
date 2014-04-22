@@ -547,7 +547,7 @@ form label {
     &:hover {
       background-size: cover, cover, cover;
       background-repeat: no-repeat, no-repeat, no-repeat;
-      background-position: top, left, top, left, top, left;
+      background-position: top left, top left, top left;
       .hover-text {
         display: block!important;
       }
@@ -555,6 +555,41 @@ form label {
   }
 }
 
+
+#frontpage-jumbotron {
+  .thumbnail-link {
+    text-decoration: none!important;
+    .thumbnail-mask {
+      background-size: cover, cover;
+      background-repeat: no-repeat, no-repeat;
+      background-position: top, left, top, left;
+      display: block;
+      width: 252px;
+      height: 252px;
+      text-align: center;
+      .hover-text {
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 24px;
+        font-family: @font-family-secondary;
+        font-weight: 700;
+        position: absolute;
+        z-index: 1050;
+        top: 42%;
+        display: none;
+        p {display: none;}
+      }
+      &:hover {
+        background-size: cover, cover, cover;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-position: top left, top left, top left;
+        .hover-text {
+          display: block!important;
+        }
+      }
+    }
+  }
+}
 
 
 .staff-meta div[class*="staff"] {

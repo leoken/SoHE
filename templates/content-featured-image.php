@@ -55,7 +55,7 @@ endif; ?>
 	<span class="hover-text">
 		<?php if (is_singular('staff') || is_page('faculty-staff')) { ?>View Profile<?php } ?>
 		<?php if (is_singular('event') || is_page('calendar-of-events')) { ?>Event Details<?php } ?>
-		<?php if (is_page('blog')) { ?>Read More<?php } ?>
+		<?php if (is_page('blog') || is_singular('post')) { ?>Read More<?php } ?>
 	</span>
 </div>
 </a>
