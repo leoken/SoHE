@@ -34,6 +34,7 @@ body.page-id-13,
 body.page-id-15,
 body.page-id-17,
 body.page-id-21,
+body.error404,
 body.blog {
   .page-header {
     h3 {
@@ -519,8 +520,16 @@ form label {
   }
   .thumbnail{
     padding: 0;
+    border: 0;
   }
 }
+
+
+.thumbnail>img, .thumbnail a>img {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 
 .thumbnail-wrapper {
   display: inline;
@@ -763,7 +772,7 @@ article.type-staff h2.entry-title {
 .sidebar {
   section {
     background-color: #EDEDED;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
       h3 {
         background-color: @brand-primary;
         text-transform: uppercase;
@@ -773,6 +782,14 @@ article.type-staff h2.entry-title {
       }
       p {
         padding: 10px 13px;
+      }
+      ul {
+        margin-left: 0;
+        padding-left: 15px;
+        li {
+          list-style: none;
+          margin-left: 0;
+        }
       }
   }
   section.widget_search{
@@ -872,19 +889,35 @@ height: 3px;
 border-radius: 1px;
 }
 
+.content {
+    .sidebar {
+    display: block;
+    &.headline {
+      font-family: @font-family-secondary;
+      text-transform: uppercase;
+      color: #000;
+      font-size: 24px;  
+  }
+    &.pull-left {
+      padding: 20px 20px 20px 0;
+      &.extra {
+        margin: 20px 20px 20px 0;
+      }
+    }
+    &.pull-right {
+      padding: 20px 0 20px 20px;
+      &.extra {
+        margin: 20px 0 20px 20px;
+      }
+    }
+    &.grayback {
+      background-color: @gray-light;
+    }
+  }
+}
 
-.sidebar {
-  display: block;
-  font-family: @font-family-secondary;
-  text-transform: uppercase;
-  color: #000;
-  font-size: 24px;
-  .pull-left {
-    padding: 20px 20px 20px 0;
-  }
-  .pull-right {
-    padding: 20px 0 20px 20px;
-  }
+aside.sidebar {
+
 }
 
 

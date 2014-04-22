@@ -9,10 +9,12 @@ function sidebar_shortcode( $atts , $content = null ) {
       'align' => '',
       'width' => '',
       'padding' => '',
+      'style' => '',
+      'textstyle' => '',
     ), $atts )
   );
 add_shortcode( 'sidebar', 'sidebar_shortcode' );
-return '<div class="sidebar pull-' . $align . ' col-sm-' . $width . ' ' . $padding . '">' . $content . '</div>';
+return '<div class="sidebar pull-' . $align . ' col-sm-' . $width . ' ' . $padding . ' ' . $style . ' ' . $textstyle . '">' . $content . '</div>';
 }
 add_shortcode( 'sidebar', 'sidebar_shortcode' );
 
@@ -22,8 +24,8 @@ function custom_quicktags() {
   if ( wp_script_is( 'quicktags' ) ) {
   ?>
   <script type="text/javascript">
-  QTags.addButton( 'sidebar-left', 'sidebar-left', '[sidebar align="left" width="3"]', '[/sidebar]', '', 'sidebar-left', 1000 );
-  QTags.addButton( 'sidebar-right', 'sidebar-right', '[sidebar align="right" width="3"]', '[/sidebar]', '', 'sidebar-right', 1000 );
+  QTags.addButton( 'sidebar-left', 'sidebar-left', '[sidebar align="left" width="3" padding="extra" style="grayback" textstyle="normal"]', '[/sidebar]', '', 'sidebar-left', 1000 );
+  QTags.addButton( 'sidebar-right', 'sidebar-right', '[sidebar align="right" width="3" padding="extra" style="grayback" textstyle="normal"]', '[/sidebar]', '', 'sidebar-right', 1000 );
   </script>
   <?php
   }
