@@ -17,8 +17,8 @@ $columnclasses = "col-xs-12 col-sm-6 col-lg-6";
 } ?>
 <div class="container marketing">
   <div class="row">
-  <?php if( have_rows('four_column_layout') ): ?>
-    <?php while( have_rows('four_column_layout') ): the_row(); ?>
+  <?php if( have_rows('column_layout') ): ?>
+    <?php while( have_rows('column_layout') ): the_row(); ?>
     <?php if( get_row_layout() == 'internal_link' ):
         $itemimage = get_sub_field('featured_image');
 
@@ -44,7 +44,7 @@ $columnclasses = "col-xs-12 col-sm-6 col-lg-6";
         $buttonlink = get_sub_field('button_link');
     ?>
         <div class="<?php echo $columnclasses; ?> col-internal-link">
-        	<?php $post = $buttonlink; setup_postdata( $post ); ?><a href="<?php the_permalink(); ?>"><?php wp_reset_postdata(); ?>
+          <?php $post = $buttonlink; setup_postdata( $post ); ?><a href="<?php the_permalink(); ?>"><?php wp_reset_postdata(); ?>
             <img class="img-circle img-responsive" src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
           </a>
           <h3><?php $post = $buttonlink; setup_postdata( $post ); ?><a href="<?php the_permalink(); ?>"><?php wp_reset_postdata(); ?><?php echo $itemtitle; ?></a></h3>
@@ -76,7 +76,7 @@ $columnclasses = "col-xs-12 col-sm-6 col-lg-6";
     ?>
 
         <div class="<?php echo $columnclasses; ?> col-external-link">
-        	<a href="<?php echo $buttonlink; ?>">
+          <a href="<?php echo $buttonlink; ?>">
             <img class="img-circle img-responsive" src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
           </a>
           <h3><a href="<?php echo $buttonlink; ?>"><?php echo $itemtitle; ?></a></h3>
