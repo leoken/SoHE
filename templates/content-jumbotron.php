@@ -418,10 +418,10 @@
         endif;
 
         ?>
-        <div class="col-internal-link">
-          <?php $post = $square_button_link; setup_postdata( $post ); ?><a href="<?php the_permalink(); ?>"><?php wp_reset_postdata(); ?>
-            <div class="thumbnail-mask">
-            <img class="img-circle img-responsive" src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
+    <div class="col-internal-link">
+          <?php $post = $square_button_link; setup_postdata( $post ); ?><a class="thumbnail-link" href="<?php the_permalink(); ?>"><?php wp_reset_postdata(); ?>
+                      <div class="thumbnail-mask">
+            <img class="img-responsive" src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" width="<?php echo $width; ?>" height="<?php echo $height; ?>" />
           <div class="hover-text">
             <h3><?php $post = $square_button_link; setup_postdata( $post ); ?><a href="<?php the_permalink(); ?>"><?php wp_reset_postdata(); ?><?php echo $square_title; ?></a></h3>
             <p><?php echo $square_excerpt; ?></p>
@@ -433,6 +433,7 @@
     </div><!-- end square -->
 
   </div>
+
   <div class="row">
     <div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 r3c1">
       <?php $rows = get_field('row_3'); ?>
