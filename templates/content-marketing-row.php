@@ -1,20 +1,9 @@
 <?php
-if(get_field('column_count') == "6")
-{
-$columnclasses = "col-xs-12 col-sm-2 col-lg-2";
-}
-if(get_field('column_count') == "4")
-{
-$columnclasses = "col-xs-12 col-sm-3 col-lg-3";
-}
-if(get_field('column_count') == "3")
-{
-$columnclasses = "col-xs-12 col-sm-4 col-lg-4";
-}
-if(get_field('column_count') == "2")
-{
-$columnclasses = "col-xs-12 col-sm-6 col-lg-6";
-} ?>
+if(get_field('column_count') == '6') { $columnclasses = "col-xs-12 col-sm-2 col-lg-2"; }
+if(get_field('column_count') == '4') { $columnclasses = "col-xs-12 col-sm-3 col-lg-3"; }
+if(get_field('column_count') == '3') { $columnclasses = "col-xs-12 col-sm-4 col-lg-4"; }
+if(get_field('column_count') == '2') { $columnclasses = "col-xs-12 col-sm-6 col-lg-6"; }
+?>
 <div class="container marketing">
   <div class="row">
   <?php if( have_rows('column_layout') ): ?>
