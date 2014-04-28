@@ -545,10 +545,13 @@ form label {
     display: block;
     width: 252px;
     height: 252px;
-    text-align: center;
+    text-align: center!important;
+    margin: 0 auto;
     .hover-text {
       text-transform: uppercase;
       color: #fff;
+      text-align: center!important;
+      margin: 0 auto!important;
       font-size: 24px;
       font-family: @font-family-secondary;
       font-weight: 700;
@@ -580,6 +583,7 @@ form label {
       width: inherit;
       height: inherit;
       text-align: center;
+      margin: 0 auto;
       &:hover img {
         opacity: .5;
       }
@@ -593,6 +597,8 @@ form label {
         z-index: 1050;
         top: 20%;
         display: none;
+        margin: 0 auto;
+        width: 100%;
         h3 {
           a {
             text-decoration: none;
