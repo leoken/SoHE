@@ -1,6 +1,41 @@
 <?php
 
 // Add Shortcode
+function accordion_shortcode( $atts , $content = null ) {
+
+  // Attributes
+  extract( shortcode_atts(
+    array(
+      'id' => '',
+      'class' => '',
+    ), $atts )
+  );
+add_shortcode( 'accordion', 'accordion_shortcode' );
+return '<p><a data-toggle="collapse" data-target="#' . $id . '" href="">More</a></p><div id="' . $id . '" class="collapse ' . $class . '">' . $content . '</div>';
+}
+add_shortcode( 'accordion', 'accordion_shortcode' );
+
+// Add Quicktags
+function accordion_quicktags() {
+
+  if ( wp_script_is( 'quicktags' ) ) {
+  ?>
+  <script type="text/javascript">
+  QTags.addButton( 'accordion', 'accordion', '[accordion id="unique-name" class="collapse"]', '[/accordion]', '', 'accordion', 1300 );
+  </script>
+  <?php
+  }
+
+}
+
+// Hook into the 'admin_print_footer_scripts' action
+add_action( 'admin_print_footer_scripts', 'accordion_quicktags' );
+
+
+
+
+
+// Add Shortcode
 function sidebar_shortcode( $atts , $content = null ) {
 
   // Attributes

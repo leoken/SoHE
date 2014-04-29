@@ -35,9 +35,44 @@ var Roots = {
         e.preventDefault();
         $(this).tab('show');
       });
+      $('#events-tabs a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+      });
       $('.nav-tabs a:first').tab('show');
-      $('.collapse').collapse();
+      $('.nav-pills a:first').tab('show');
+      $('.entry-content').collapse();
 
+      $('li.all').find('a').each(function () {
+       $(this).attr('href', '#all');
+       $(this).attr('data-target', '#all');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.thismonth').find('a').each(function () {
+       $(this).attr('href', '#thismonth');
+       $(this).attr('data-target', '#thismonth');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.nextmonth').find('a').each(function () {
+       $(this).attr('href', '#nextmonth');
+       $(this).attr('data-target', '#nextmonth');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.twomonthsahead').find('a').each(function () {
+       $(this).attr('href', '#twomonthsahead');
+       $(this).attr('data-target', '#twomonthsahead');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.threemonthsahead').find('a').each(function () {
+       $(this).attr('href', '#threemonthsahead');
+       $(this).attr('data-target', '#threemonthsahead');
+       $(this).attr('data-toggle', 'tab');
+      });
+      $('li.lookingahead').find('a').each(function () {
+       $(this).attr('href', '#lookingahead');
+       $(this).attr('data-target', '#lookingahead');
+       $(this).attr('data-toggle', 'tab');
+      });
       $('li.menu-all').find('a').each(function () {
        $(this).attr('href', '#all');
        $(this).attr('data-target', '#all');

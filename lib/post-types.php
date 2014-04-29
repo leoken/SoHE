@@ -2,7 +2,7 @@
 
 // Register Custom Post Type
 function sohe_post_types() {
-
+/*
 	$labels = array(
 		'name'                => _x( 'Events', 'Post Type General Name', 'sohe' ),
 		'singular_name'       => _x( 'Event', 'Post Type Singular Name', 'sohe' ),
@@ -46,7 +46,7 @@ function sohe_post_types() {
 		'capability_type'     => 'post',
 	);
 	register_post_type( 'event', $args );
-
+*/
 
 	$labels = array(
 		'name'                => _x( 'Staff', 'Post Type General Name', 'sohe' ),
