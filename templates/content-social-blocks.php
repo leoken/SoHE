@@ -5,6 +5,7 @@
           
         </div><!-- /.col-lg-4 -->
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 instagram">
+          <?php echo do_shortcode('[simply_instagram endpoints="users" type="self-feed" size="low_resolution" display="4"]'); ?>
           <img class="img-circle" src="/wp-content/uploads/nancy-nich-hall-tour.png" alt="Generic placeholder image">
         </div><!-- /.col-lg-4 -->
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 facebook">
